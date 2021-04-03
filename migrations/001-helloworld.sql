@@ -2,7 +2,8 @@
 CREATE TABLE person (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
-    email TEXT
+    email TEXT,
+    password TEXT
 );
 
 CREATE TABLE vehicle (
@@ -12,12 +13,6 @@ CREATE TABLE vehicle (
     ownerId INTEGER REFERENCES person(id)
 );
 
-INSERT INTO person (name, email) values ('miguel', 'miguel@coelho.pt');
-INSERT INTO person (name, email) values ('joao', 'joao@coelho.pt');
-
-INSERT INTO vehicle (brand, model, ownerId) values ('audi', 'R8', 1);
-INSERT INTO vehicle (brand, model, ownerId) values ('bmw', 'I8', 2);
-
---Down
+-- Down
 DROP TABLE person;
 DROP TABLE vehicle;
